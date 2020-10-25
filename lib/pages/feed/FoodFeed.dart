@@ -89,7 +89,7 @@ class _FoodFeedState extends State<FoodFeed> {
                                         width: 1,
                                       )),
                                       child: Image.asset(
-                                          'lib/assets/foodbutton1.png',
+                                          'lib/assets/chens.jpg',
                                           fit: BoxFit.cover,
                                           height: 130,
                                           width: 50)))),
