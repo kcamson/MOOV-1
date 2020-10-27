@@ -223,7 +223,7 @@ class _HomePageState extends State<HomePage>
           //   ),
           // ),
           SliverPadding(
-            padding: EdgeInsets.only(left: 0, right: 10, bottom: 45),
+            padding: EdgeInsets.only(left: 0, right: 0, bottom: 45),
             sliver: SliverGrid.count(
               crossAxisCount: 1,
               mainAxisSpacing: 0.0,
@@ -252,8 +252,8 @@ class _HomePageState extends State<HomePage>
                           onTap: () {
                             navigateToFoodFeed(context);
                           },
-                          child: CategoryButton(
-                              asset: 'lib/assets/foodb2.png')),
+                          child:
+                              CategoryButton(asset: 'lib/assets/foodb2.png')),
                       Align(
                           alignment: Alignment.center,
                           child: Text(
@@ -309,7 +309,7 @@ class _HomePageState extends State<HomePage>
                         ))
                   ],
                 ),
-                
+
                 // Column(
                 //   crossAxisAlignment: CrossAxisAlignment.center,
                 //   children: <Widget>[
@@ -382,35 +382,37 @@ class _HomePageState extends State<HomePage>
           //     ],
           //   ),
           // ),
-           SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Container(
               decoration: BoxDecoration(
+                
                 borderRadius: BorderRadius.all(
-                  Radius.circular(10),
+                  Radius.circular(25),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3), // changes position of shadow
-                  ),
-                ],
+                // boxShadow: [
+                //   BoxShadow(
+                //     color: Colors.grey.withOpacity(0.5),
+                //     spreadRadius: 5,
+                //     blurRadius: 7,
+                //     offset: Offset(0, 3), // changes position of shadow
+                //   ),
+                // ],
               ),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-          context, MaterialPageRoute(builder: (context) => MorePage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MorePage()));
                 },
+                
                 child: Card(
-                  margin: EdgeInsets.all(8),
+    
+                  margin: EdgeInsets.all(15),
                   color: Color.fromRGBO(249, 249, 249, 1.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Padding(
-                        padding: const EdgeInsets.only(
-                            bottom: 35, top: 35),
+                        padding: const EdgeInsets.only(bottom: 35, top: 35),
                         child: RichText(
                           textScaleFactor: 1.75,
                           text:
@@ -420,13 +422,27 @@ class _HomePageState extends State<HomePage>
                           ]),
                         ),
                       ),
-                      
                     ],
                   ),
                 ),
               ),
             ),
           ),
+            // child: Padding(
+            //   padding: const EdgeInsets.only(right: 15, left: 15, bottom: 20, top: 15.5),
+            //   child: SizedBox(
+            //     height: 75.0,
+            //     width: 300,
+            //     child: FloatingActionButton.extended(
+            //       onPressed: () {},
+            //       icon: Icon(Icons.search),
+            //       backgroundColor: Color.fromRGBO(2, 43, 91, 1.0),
+            //       label: Text("Somethin' else?", style: TextThemes.extraBold),
+            //       foregroundColor: Colors.white,
+            //       elevation: 15,
+            //     ),
+            //   ),
+            // ),
           // SliverToBoxAdapter(
           //   child: Container(
           //     decoration: BoxDecoration(
@@ -808,7 +824,7 @@ class Motd extends StatelessWidget {
                 child: Card(
                   borderOnForeground: true,
                   child: Padding(
-                    padding: const EdgeInsets.only(bottom: 4.0),
+                    padding: const EdgeInsets.all(4.0),
                     child: Text(
                       "MOOV of the Day",
                       style: TextStyle(
