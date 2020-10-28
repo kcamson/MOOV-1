@@ -1,3 +1,4 @@
+import 'package:MOOV/pages/home/HomePage.dart';
 import 'package:MOOV/utils/themes_styles.dart';
 import 'package:MOOV/models/post_model.dart';
 import 'package:MOOV/pages/feed/FoodFeed.dart';
@@ -17,35 +18,7 @@ class MorePage extends StatefulWidget {
   _MorePageState createState() => _MorePageState();
 }
 
-class MyAppBar extends AppBar {
-  MyAppBar({Key key, Widget title})
-      : super(
-            key: key,
-            title: title,
-            backgroundColor: Color.fromRGBO(2, 43, 91, 1.0),
-            actions: <Widget>[
-              IconButton(
-                padding: EdgeInsets.all(5.0),
-                icon: Icon(Icons.search),
-                color: Colors.white,
-                splashColor: Color.fromRGBO(220, 180, 57, 1.0),
-                onPressed: () {
-                  // Implement navigation to shopping cart page here...
-                  print('Click Search');
-                },
-              ),
-              IconButton(
-                padding: EdgeInsets.all(5.0),
-                icon: Icon(Icons.message),
-                color: Colors.white,
-                splashColor: Color.fromRGBO(220, 180, 57, 1.0),
-                onPressed: () {
-                  // Implement navigation to shopping cart page here...
-                  print('Click Message');
-                },
-              )
-            ]);
-}
+
 
 class _MorePageState extends State<MorePage>
     with SingleTickerProviderStateMixin {
@@ -118,7 +91,7 @@ class _MorePageState extends State<MorePage>
                       builder: (context) => MoovMaker(postModel: PostModel())),
                 );
               },
-              label: const Text("Have a MOOV?",
+              label: const Text("Post a MOOV",
                   style: TextStyle(fontSize: 16, color: Colors.white))),
         ),
       ),
@@ -127,51 +100,60 @@ class _MorePageState extends State<MorePage>
         controller: _scrollController,
         slivers: <Widget>[
           SliverAppBar(
-            backgroundColor: TextThemes.ndBlue,
-            //pinned: true,
-            floating: true,
-            actions: <Widget>[
-              IconButton(
-                padding: EdgeInsets.all(5.0),
-                icon: Icon(Icons.search),
-                color: Colors.white,
-                splashColor: Color.fromRGBO(220, 180, 57, 1.0),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Search()));
-                  // Implement navigation to shopping cart page here...
-                  print('Click Search');
-                },
+            leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.pop(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            );
+          },
+        ),
+        backgroundColor: TextThemes.ndBlue,
+        //pinned: true,
+        actions: <Widget>[
+          IconButton(
+            padding: EdgeInsets.all(5.0),
+            icon: Icon(Icons.search),
+            color: Colors.white,
+            splashColor: Color.fromRGBO(220, 180, 57, 1.0),
+            onPressed: () {
+              // Implement navigation to shopping cart page here...
+              print('Click Search');
+            },
+          ),
+          IconButton(
+            padding: EdgeInsets.all(5.0),
+            icon: Icon(Icons.message),
+            color: Colors.white,
+            splashColor: Color.fromRGBO(220, 180, 57, 1.0),
+            onPressed: () {
+              // Implement navigation to shopping cart page here...
+              print('Click Message');
+            },
+          )
+        ],
+        flexibleSpace: FlexibleSpaceBar(
+          titlePadding: EdgeInsets.all(5),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image.asset(
+                'lib/assets/moovheader.png',
+                fit: BoxFit.cover,
+                height: 45.0,
               ),
-              IconButton(
-                padding: EdgeInsets.all(5.0),
-                icon: Icon(Icons.message),
-                color: Colors.white,
-                splashColor: Color.fromRGBO(220, 180, 57, 1.0),
-                onPressed: () {
-                  // Implement navigation to shopping cart page here...
-                  print('Click Message');
-                },
+              Image.asset(
+                'lib/assets/ndlogo.png',
+                fit: BoxFit.cover,
+                height: 25,
               )
             ],
-            flexibleSpace: FlexibleSpaceBar(
-              titlePadding: EdgeInsets.all(5),
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Image.asset(
-                    'lib/assets/moovheader.png',
-                    fit: BoxFit.cover,
-                    height: 45.0,
-                  ),
-                  Image.asset(
-                    'lib/assets/ndlogo.png',
-                    fit: BoxFit.cover,
-                    height: 25,
-                  )
-                ],
-              ),
-            ),
+          ),
+        ),
           ),
           // SliverFixedExtentList(
           //   itemExtent: 50,

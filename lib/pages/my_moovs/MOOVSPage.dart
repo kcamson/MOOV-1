@@ -1,4 +1,7 @@
-// import 'package:MOOV/widgets/segmented_control.dart';
+
+
+///THIS PAGE IS WHERE POSTS A USER "LIKES" SHOULD POPULATE
+
 import 'package:MOOV/pages/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';

@@ -1,3 +1,9 @@
+
+
+import 'package:MOOV/pages/home/HomePage.dart';
+///THESE "FEEDS" PROBABLY NEED TO BE CONSOLIDATED INTO ONE FILE THAT WORKS FOR ALL CATEGORIES
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:MOOV/utils/themes_styles.dart';
@@ -17,34 +23,25 @@ class _PartyFeedState extends State<PartyFeed> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.pop(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            );
+          },
+        ),
         backgroundColor: TextThemes.ndBlue,
         //pinned: true,
-        actions: <Widget>[
-          IconButton(
-            padding: EdgeInsets.all(5.0),
-            icon: Icon(Icons.search),
-            color: Colors.white,
-            splashColor: Color.fromRGBO(220, 180, 57, 1.0),
-            onPressed: () {
-              // Implement navigation to shopping cart page here...
-              print('Click Search');
-            },
-          ),
-          IconButton(
-            padding: EdgeInsets.all(5.0),
-            icon: Icon(Icons.message),
-            color: Colors.white,
-            splashColor: Color.fromRGBO(220, 180, 57, 1.0),
-            onPressed: () {
-              // Implement navigation to shopping cart page here...
-              print('Click Message');
-            },
-          )
-        ],
+
         flexibleSpace: FlexibleSpaceBar(
           titlePadding: EdgeInsets.all(5),
           title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(
                 'lib/assets/moovheader.png',

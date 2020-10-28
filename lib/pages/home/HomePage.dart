@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage>
                       builder: (context) => MoovMaker(postModel: PostModel())),
                 );
               },
-              label: const Text("Have a MOOV?",
+              label: const Text("Post a MOOV",
                   style: TextStyle(fontSize: 16, color: Colors.white))),
         ),
       ),
