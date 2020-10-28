@@ -57,10 +57,7 @@ class _SearchState extends State<Search> {
         child: ListView(
           shrinkWrap: true,
           children: <Widget>[
-            SvgPicture.asset(
-              'assets/images/search.svg',
-              height: orientation == Orientation.portrait ? 300.0 : 200.0,
-            ),
+            
             Text(
               "",
               textAlign: TextAlign.center,

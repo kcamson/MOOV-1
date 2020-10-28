@@ -1,3 +1,4 @@
+import 'package:MOOV/pages/friends/friend_finder.dart';
 import 'package:MOOV/pages/home/MorePage.dart';
 import 'package:MOOV/utils/themes_styles.dart';
 import 'package:MOOV/models/post_model.dart';
@@ -141,17 +142,18 @@ class _HomePageState extends State<HomePage>
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Search()));
                   // Implement navigation to shopping cart page here...
-                  print('Click Search');
+                  print('SEARCH CLICKED');
                 },
               ),
               IconButton(
-                padding: EdgeInsets.all(5.0),
-                icon: Icon(Icons.message),
+                padding: EdgeInsets.only(right: 10.0),
+                icon: Text('INVITES', style: TextStyle(color: Colors.white)),
+                iconSize: 65,
                 color: Colors.white,
                 splashColor: Color.fromRGBO(220, 180, 57, 1.0),
                 onPressed: () {
                   // Implement navigation to shopping cart page here...
-                  print('Click Message');
+                  print('INVITES CLICKED');
                 },
               )
             ],
@@ -223,7 +225,7 @@ class _HomePageState extends State<HomePage>
           //   ),
           // ),
           SliverPadding(
-            padding: EdgeInsets.only(left: 0, right: 0, bottom: 45),
+            padding: EdgeInsets.only(left: 0, right: 0, bottom: 0),
             sliver: SliverGrid.count(
               crossAxisCount: 1,
               mainAxisSpacing: 0.0,
@@ -231,11 +233,40 @@ class _HomePageState extends State<HomePage>
               childAspectRatio: 2.25,
               children: <Widget>[
                 Container(
-                  child: Motd(),
+                  child: Column(
+                    children: [
+                      Motd(),
+                    ],
+                  ),
                 ),
               ],
             ),
           ),
+          SliverToBoxAdapter(
+              child: Padding(
+            padding: const EdgeInsets.only(bottom: 30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  padding: EdgeInsets.all(5.0),
+                  icon: Image.asset('lib/assets/friendfinder.png'),
+                  color: Colors.white,
+                  splashColor: Color.fromRGBO(220, 180, 57, 1.0),
+                  onPressed: () {
+
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FriendFinder()));
+                    // Implement navigation to shopping cart page here...
+                    print('FRIEND FINDER CLICKED');
+                  },
+                ),
+                Text('FRIEND FINDER')
+              ],
+            ),
+          )),
+
           SliverPadding(
             padding: EdgeInsets.only(left: 10, right: 10),
             sliver: SliverGrid.count(
@@ -295,8 +326,7 @@ class _HomePageState extends State<HomePage>
                         onTap: () {
                           navigateToShowFeed(context);
                         },
-                        child: CategoryButton(
-                            asset: 'lib/assets/partybutton1.png')),
+                        child: CategoryButton(asset: 'lib/assets/party2.png')),
                     Align(
                         alignment: Alignment.center,
                         child: Text(
@@ -385,39 +415,26 @@ class _HomePageState extends State<HomePage>
           SliverToBoxAdapter(
             child: Container(
               decoration: BoxDecoration(
-                
-                borderRadius: BorderRadius.all(
-                  Radius.circular(25),
-                ),
-                // boxShadow: [
-                //   BoxShadow(
-                //     color: Colors.grey.withOpacity(0.5),
-                //     spreadRadius: 5,
-                //     blurRadius: 7,
-                //     offset: Offset(0, 3), // changes position of shadow
-                //   ),
-                // ],
+                shape: BoxShape.circle,
               ),
               child: GestureDetector(
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => MorePage()));
                 },
-                
                 child: Card(
-    
                   margin: EdgeInsets.all(15),
-                  color: Color.fromRGBO(249, 249, 249, 1.0),
+                  color: TextThemes.ndBlue,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 35, top: 35),
+                        padding: const EdgeInsets.only(bottom: 25, top: 25),
                         child: RichText(
                           textScaleFactor: 1.75,
                           text:
                               TextSpan(style: TextThemes.mediumbody, children: [
-                            TextSpan(text: "Somethin' ", style: TextStyle()),
+                            TextSpan(text: "Somethin' ", style: TextStyle(color: Colors.white)),
                             TextSpan(text: "else?", style: TextThemes.italic),
                           ]),
                         ),
@@ -428,21 +445,21 @@ class _HomePageState extends State<HomePage>
               ),
             ),
           ),
-            // child: Padding(
-            //   padding: const EdgeInsets.only(right: 15, left: 15, bottom: 20, top: 15.5),
-            //   child: SizedBox(
-            //     height: 75.0,
-            //     width: 300,
-            //     child: FloatingActionButton.extended(
-            //       onPressed: () {},
-            //       icon: Icon(Icons.search),
-            //       backgroundColor: Color.fromRGBO(2, 43, 91, 1.0),
-            //       label: Text("Somethin' else?", style: TextThemes.extraBold),
-            //       foregroundColor: Colors.white,
-            //       elevation: 15,
-            //     ),
-            //   ),
-            // ),
+          // child: Padding(
+          //   padding: const EdgeInsets.only(right: 15, left: 15, bottom: 20, top: 15.5),
+          //   child: SizedBox(
+          //     height: 75.0,
+          //     width: 300,
+          //     child: FloatingActionButton.extended(
+          //       onPressed: () {},
+          //       icon: Icon(Icons.search),
+          //       backgroundColor: Color.fromRGBO(2, 43, 91, 1.0),
+          //       label: Text("Somethin' else?", style: TextThemes.extraBold),
+          //       foregroundColor: Colors.white,
+          //       elevation: 15,
+          //     ),
+          //   ),
+          // ),
           // SliverToBoxAdapter(
           //   child: Container(
           //     decoration: BoxDecoration(
@@ -744,7 +761,7 @@ class Motd extends StatelessWidget {
     return Column(
       children: <Widget>[
         Container(
-          height: MediaQuery.of(context).size.height * 0.15,
+          height: MediaQuery.of(context).size.height * 0.135,
           child: Stack(children: <Widget>[
             FractionallySizedBox(
               widthFactor: 1,
