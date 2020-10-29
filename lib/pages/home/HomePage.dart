@@ -255,14 +255,38 @@ class _HomePageState extends State<HomePage>
                   color: Colors.white,
                   splashColor: Color.fromRGBO(220, 180, 57, 1.0),
                   onPressed: () {
-
-                    Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => FriendFinder()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => FriendFinder()));
                     // Implement navigation to shopping cart page here...
                     print('FRIEND FINDER CLICKED');
                   },
                 ),
-                Text('FRIEND FINDER')
+                Align(
+                    alignment: Alignment.center,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => FriendFinder()));
+                      },
+                      child: Card(
+                        borderOnForeground: true,
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Text(
+                            "Friend Finder",
+                            style: TextStyle(
+                                fontFamily: 'Open Sans',
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                fontSize: 16.0),
+                          ),
+                        ),
+                      ),
+                    )),
               ],
             ),
           )),
@@ -434,7 +458,9 @@ class _HomePageState extends State<HomePage>
                           textScaleFactor: 1.75,
                           text:
                               TextSpan(style: TextThemes.mediumbody, children: [
-                            TextSpan(text: "Somethin' ", style: TextStyle(color: Colors.white)),
+                            TextSpan(
+                                text: "Somethin' ",
+                                style: TextStyle(color: Colors.white)),
                             TextSpan(text: "else?", style: TextThemes.italic),
                           ]),
                         ),

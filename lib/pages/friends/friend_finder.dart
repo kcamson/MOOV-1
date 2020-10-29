@@ -11,10 +11,10 @@ class FriendFinder extends StatelessWidget {
           backgroundColor: TextThemes.ndBlue,
           //pinned: true,
           floating: false,
-          expandedHeight: 120.0,
+          expandedHeight: 30.0,
           flexibleSpace: FlexibleSpaceBar(
             title: Text('FRIEND FINDER',
-                style: TextStyle(fontSize: 16, color: Colors.white)),
+                style: TextStyle(fontSize: 20, color: Colors.white)),
           ),
         ),
         SliverFixedExtentList(
@@ -36,15 +36,15 @@ class FriendFinder extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('Kevin Camson',
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text('Kevin Camson is',
                           style: TextStyle(
                               fontSize: 16,
                               color: TextThemes.ndBlue,
                               decoration: TextDecoration.none)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 30.0, right: 5),
+                      padding: const EdgeInsets.only(left: 3.0, right: 5),
                       child: Text('Going',
                           style: TextStyle(
                               fontSize: 16,
@@ -93,15 +93,15 @@ class FriendFinder extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('Alvin Alaphat',
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text('Alvin Alaphat is',
                           style: TextStyle(
                               fontSize: 16,
                               color: TextThemes.ndBlue,
                               decoration: TextDecoration.none)),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 30.0, right: 5),
+                      padding: const EdgeInsets.only(left: 3.0, right: 5),
                       child: Text('Going',
                           style: TextStyle(
                               fontSize: 16,
@@ -124,7 +124,8 @@ class FriendFinder extends StatelessWidget {
                             width: 50,
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0),
+                            padding: const EdgeInsets.only(
+                                left: 8.0, top: 8.0, right: 8.0),
                             child: Text('Hiking Trip',
                                 style: TextStyle(
                                     fontSize: 16,
