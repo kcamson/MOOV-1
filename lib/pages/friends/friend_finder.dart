@@ -57,7 +57,7 @@ class FriendFinder extends StatelessWidget {
                             color: CupertinoColors.black,
                             decoration: TextDecoration.none)),
                     Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 20.0),
+                      padding: const EdgeInsets.only(top: 10, left: 0.0),
                       child: Column(
                         children: [
                           Image.asset(
@@ -114,7 +114,7 @@ class FriendFinder extends StatelessWidget {
                             color: CupertinoColors.black,
                             decoration: TextDecoration.none)),
                     Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 20.0),
+                      padding: const EdgeInsets.only(top: 10, left: 2.0),
                       child: Column(
                         children: [
                           Image.asset(
@@ -137,6 +137,63 @@ class FriendFinder extends StatelessWidget {
                     )
                   ],
                 )),
+                // Container(
+                // color: Colors.grey[300],
+                // child: Row(
+                //   children: [
+                //     Padding(
+                //       padding: const EdgeInsets.only(left: 15),
+                //       child: CircleAvatar(
+                //         radius: 35,
+                //         backgroundColor: TextThemes.ndBlue,
+                //         child: CircleAvatar(
+                //           backgroundImage: AssetImage('lib/assets/ingrid.png'),
+                //           maxRadius: 32,
+                //         ),
+                //       ),
+                //     ),
+                //     Padding(
+                //       padding: const EdgeInsets.only(left: 8.0),
+                //       child: Text('Ingrid Vu is',
+                //           style: TextStyle(
+                //               fontSize: 16,
+                //               color: TextThemes.ndBlue,
+                //               decoration: TextDecoration.none)),
+                //     ),
+                //     Padding(
+                //       padding: const EdgeInsets.only(left: 3.0, right: 5),
+                //       child: Text('Going',
+                //           style: TextStyle(
+                //               fontSize: 16,
+                //               color: CupertinoColors.activeGreen,
+                //               decoration: TextDecoration.none)),
+                //     ),
+                //     Text('to',
+                //         style: TextStyle(
+                //             fontSize: 16,
+                //             color: CupertinoColors.black,
+                //             decoration: TextDecoration.none)),
+                //     Padding(
+                //       padding: const EdgeInsets.only(top: 10, left: 5.0),
+                //       child: Column(
+                //         children: [
+                //           Image.asset(
+                //             'lib/assets/kilwins.jpg',
+                //             height: 50,
+                //           ),
+                //           Padding(
+                //             padding: const EdgeInsets.only(top: 8.0),
+                //             child: Text("Ice Cream w/ AC",
+                //                 style: TextStyle(
+                //                     fontSize: 16,
+                //                     color: CupertinoColors.black,
+                //                     decoration: TextDecoration.none)),
+                //           ),
+                //         ],
+                //       ),
+                //     )
+                //   ],
+                // )),
           ]),
         ),
       ],
