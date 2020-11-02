@@ -1,6 +1,7 @@
+import 'package:MOOV/pages/friends/friend_groups_button.dart';
 import 'package:MOOV/utils/themes_styles.dart';
 import 'package:MOOV/pages/home/home.dart';
-import 'package:MOOV/widgets/contacts_button.dart';
+import 'package:MOOV/pages/contacts/contacts_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 // import 'package:permission_handler/permission_handler.dart';
@@ -82,9 +83,10 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 SeeContactsButton(),
+                FriendGroupsButton()
                 // Padding(
                 //   padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                 //   child: Text(''),

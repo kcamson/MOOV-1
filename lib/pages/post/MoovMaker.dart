@@ -143,10 +143,10 @@ class _MoovMakerFormState extends State<MoovMakerForm> {
 
   final _formKey = GlobalKey<FormState>();
   final listOfTypes = [
-    "Food",
+    "Food & Drinks",
+    "Party & Hangouts",
     "Sport",
     "Show",
-    "Party",
     "Study",
     "Gov",
     "Mass",
@@ -157,7 +157,7 @@ class _MoovMakerFormState extends State<MoovMakerForm> {
     "Other"
   ];
   final listOfLocations = [
-    "Off Campus",
+    "Off-Campus",
     "Alumni Hall",
     "Badin Hall",
     "Baumer Hall",
@@ -195,7 +195,7 @@ class _MoovMakerFormState extends State<MoovMakerForm> {
   DateTime currentValue = DateTime.now();
   DateTime endTime = DateTime.now().add(Duration(minutes: 120));
   String typeDropdownValue = 'Party';
-  String locationDropdownValue = 'Off Campus';
+  String locationDropdownValue = 'Off-Campus';
   final titleController = TextEditingController();
   final addressController = TextEditingController();
   final descriptionController = TextEditingController();

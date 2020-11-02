@@ -14,25 +14,25 @@ class SeeContactsButton extends StatelessWidget {
           .withOpacity(.7), //set this opacity as per your requirement
 
       onPressed: () async {
-        final PermissionStatus permissionStatus = await _getPermission();
-        if (permissionStatus == PermissionStatus.granted) {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => ContactsPage()));
-        } else {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) => CupertinoAlertDialog(
-                    title: Text('Permissions error'),
-                    content: Text('Please enable contacts access '
-                        'permission in system settings'),
-                    actions: <Widget>[
-                      CupertinoDialogAction(
-                        child: Text('OK'),
-                        onPressed: () => Navigator.of(context).pop(),
-                      )
-                    ],
-                  ));
-        }
+        // final PermissionStatus permissionStatus = await _getPermission();
+        // if (permissionStatus == PermissionStatus.granted) {
+        //   Navigator.push(
+        //       context, MaterialPageRoute(builder: (context) => ContactsPage()));
+        // } else {
+        //   showDialog(
+        //       context: context,
+        //       builder: (BuildContext context) => CupertinoAlertDialog(
+        //             title: Text('Permissions error'),
+        //             content: Text('Please enable contacts access '
+        //                 'permission in system settings'),
+        //             actions: <Widget>[
+        //               CupertinoDialogAction(
+        //                 child: Text('OK'),
+        //                 onPressed: () => Navigator.of(context).pop(),
+        //               )
+        //             ],
+        //           ));
+        // }
       },
       child: Row(
         mainAxisSize: MainAxisSize.min,
