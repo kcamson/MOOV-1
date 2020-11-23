@@ -145,17 +145,18 @@ class _HomePageState extends State<HomePage>
                   print('SEARCH CLICKED');
                 },
               ),
-              IconButton(
-                padding: EdgeInsets.only(right: 10.0),
-                icon: Text('INVITES', style: TextStyle(color: Colors.white)),
-                iconSize: 65,
-                color: Colors.white,
-                splashColor: Color.fromRGBO(220, 180, 57, 1.0),
-                onPressed: () {
-                  // Implement navigation to shopping cart page here...
-                  print('INVITES CLICKED');
-                },
-              )
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: IconButton(
+                  padding: EdgeInsets.all(5.0),
+                  icon: Icon(Icons.notifications),
+                  color: Colors.white,
+                  splashColor: Color.fromRGBO(220, 180, 57, 1.0),
+                  onPressed: () {
+                    print('NOTIFICATIONS CLICKED');
+                  },
+                ),
+              ),
             ],
             flexibleSpace: FlexibleSpaceBar(
               titlePadding: EdgeInsets.all(5),
